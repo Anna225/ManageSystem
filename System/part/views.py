@@ -160,14 +160,7 @@ class userlist(ListView):
         context['users'] = users
         
         return context
-'''
-@method_decorator(login_required, name='dispatch')
-class useradd(CreateView):
-    model = User
-    fields = "__all__"
-    template_name = "usersadd.html"
-    success_url = reverse_lazy('userlist')
-'''
+
 def delete_user(request):
     my_id = request.POST.get('value')
     user = User.objects.get(id=my_id)
